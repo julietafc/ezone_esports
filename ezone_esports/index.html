@@ -91,32 +91,32 @@
           <div class="form__element">
             <label for="gameTypes">Game types: </label>
             <div class="gameTypes__wrap">
-              <input id="fps" name="fps" type="checkbox" />
-              <label for="fps">FPS:</label>
-              <input id="mmorpg" name="mmorpg" type="checkbox" />
-              <label for="mmorpg">MMORPG:</label>
-              <input id="sports" name="sports" type="checkbox" />
-              <label for="sports">Sports:</label>
-              <input id="racing" name="racing" type="checkbox" />
-              <label for="racing">Racing:</label>
-              <input id="towerdef" name="towerdef" type="checkbox" />
-              <label for="towerdef">Tower defence:</label>
-              <input id="rts" name="rts" type="checkbox" />
-              <label for="rts">RTS:</label>
-              <input id="rpg" name="rpg" type="checkbox" />
-              <label for="rpg">RPG:</label>
-              <input id="adv" name="adv" type="checkbox" />
-              <label for="adv">Adventure:</label>
-              <input id="survival" name="survival" type="checkbox" />
-              <label for="survival">Survival:</label>
-              <input id="fight" name="fight" type="checkbox" />
-              <label for="fight">Fighting:</label>
-              <input id="btlr" name="btlr" type="checkbox" />
-              <label for="btlr">Battle royale:</label>
-              <input id="rhythm" name="rhythm" type="checkbox" />
-              <label for="rhythm">Rhythm:</label>
-              <input id="platform" name="platform" type="checkbox" />
-              <label for="platform">Platform:</label>
+              <input id="handeye" name="handeye" type="checkbox" />
+              <label for="handeye">handeye:</label>
+              <input id="reaction" name="reaction" type="checkbox" />
+              <label for="reaction">reaction:</label>
+              <input id="vision" name="vision" type="checkbox" />
+              <label for="vision">vision:</label>
+              <input id="Communication" name="Communication" type="checkbox" />
+              <label for="Communication">Communication:</label>
+              <input id="mindset" name="mindset" type="checkbox" />
+              <label for="mindset">Tower defence:</label>
+              <input id="nutrition" name="nutrition" type="checkbox" />
+              <label for="nutrition">nutrition:</label>
+              <input id="injuries" name="injuries" type="checkbox" />
+              <label for="injuries">injuries:</label>
+              <input id="technology" name="technology" type="checkbox" />
+              <label for="technology">technologyenture:</label>
+              <input id="physiology" name="physiology" type="checkbox" />
+              <label for="physiology">physiology:</label>
+              <input id="sleep" name="sleep" type="checkbox" />
+              <label for="sleep">sleeping:</label>
+              <input id="stress" name="stress" type="checkbox" />
+              <label for="stress">Battle royale:</label>
+              <input id="tactics" name="tactics" type="checkbox" />
+              <label for="tactics">tactics:</label>
+              <input id="strategy" name="strategy" type="checkbox" />
+              <label for="strategy">strategy:</label>
             </div>
           <div class="form-btns">
             <button class="btn back">Back</button>
@@ -126,17 +126,83 @@
         
         <!-- GAMES -->
         <div class="games">
-
+          <div class="close">X</div>
+          <h2>Game preferences</h2>
+          <div class="form__element">
+            <label for="games">Games you play</label>
+            <p>Enter one game per line</p>
+            <textarea name="games" id="games" placeholder="e.g. Counter-Strike" required></textarea>
+          <div class="form-btns">
+            <button class="btn back">Back</button>
+            <button class="btn next">Next</button>
+          </div>
         </div>
 
         <!-- HABITS -->
         <div class="habits">
+          <div class="close">X</div>
+          <h2>Your habits</h2>
+          <label for="hours">Weekly hours playing from 1-20</label>
+          <div class="range-wrap">
+            <input type="range" step="1" min="0" max="20" value="1" id="hours" name="hours" />
+          </div>
 
+          <label for="workout">Weekly hours physical exercise from 1-10</label>
+          <div class="range-wrap">
+            <input type="range" step="1" min="0" max="10" value="1" id="workout" name="workout" />
+          </div>
+
+          <label for="workout">Rate your food and drinks from 1-10</label>
+          <div class="range-wrap">
+            <input type="range" step="1" min="0" max="10" value="1" id="workout" name="workout" />
+          </div>
+          
+          <label for="mental">Rate your mental wellbeing from 1-10</label>
+          <div class="range-wrap">
+            <input type="range" step="1" min="0" max="10" value="1" id="mental" name="mental" />
+          </div>
         </div>
 
         <!-- SKILLS -->
         <div class="skills">
-
+          <div class="close">X</div>
+          <h2>What would you improve?</h2>
+          <div class="form__element">
+            <label for="skill">Game types: </label>
+            <div class="skill__wrap">
+              <input id="handeye" name="handeye" type="checkbox" />
+              <label for="handeye">Hand/eye coordination:</label>
+              <input id="reaction" name="reaction" type="checkbox" />
+              <label for="reaction">Reaction Time:</label>
+              <input id="vision" name="vision" type="checkbox" />
+              <label for="vision">Vision:</label>
+              <input id="communication" name="communication" type="checkbox" />
+              <label for="communication">Communication:</label>
+              <input id="mindset" name="mindset" type="checkbox" />
+              <label for="mindset">Mindset:</label>
+              <input id="nutrition" name="nutrition" type="checkbox" />
+              <label for="nutrition">Nutrition:</label>
+              <input id="injuries" name="injuries" type="checkbox" />
+              <label for="injuries">Injuries:</label>
+              <input id="technology" name="technology" type="checkbox" />
+              <label for="technology">Technology:</label>
+              <input id="physiology" name="physiology" type="checkbox" />
+              <label for="physiology">Physiology:</label>
+              <input id="sleep" name="sleep" type="checkbox" />
+              <label for="sleep">Sleeping:</label>
+              <input id="stress" name="stress" type="checkbox" />
+              <label for="stress">Stress:</label>
+              <input id="tactics" name="tactics" type="checkbox" />
+              <label for="tactics">Tactics:</label>
+              <input id="strategy" name="strategy" type="checkbox" />
+              <label for="strategy">Strategy:</label>
+              <input id="leadership" name="leadership" type="checkbox" />
+              <label for="leadership">Leadership:</label>
+            </div>
+          <div class="form-btns">
+            <button class="btn back">Back</button>
+            <button action="submit" class="btn submit">Submit</button>
+          </div>
         </div>
 
       </form>
