@@ -1,38 +1,13 @@
+@use "sass/base/base";
+@use "sass/components/";
+@use "sass/layout";
+
 *,
 *::after,
 ::before {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-@font-face {
-  font-family: "Shapiro Regular";
-  src: url("./fonts/sharpiro-regular.woff2") format("woff2"), url("./fonts/sharpiro-regular.woff2") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-:root {
-  scroll-behavior: smooth;
-
-  --orange-clr: "#F48D69";
-  --orange-light-clr: "#FFB591";
-  --orange-pastel-clr: "#F8DDCE";
-
-  --blue-clr: "#3E14D6";
-  --blue-light-clr: "#6259FA";
-  --blue-pastel-clr: "#CACEFC";
-
-  --green-clr: "#5BE080";
-  --green-light-clr: "#B9F8B9";
-  --green-pastel-clr: "#DFFCDF";
-
-  --grey-clr: "#16162A";
-  --grey-medium-clr: "#3F3F50";
-  --grey-light-clr: "#A5A5AC";
-  --grey-pastel-clr: "#E3E3E5";
 }
 
 main {
