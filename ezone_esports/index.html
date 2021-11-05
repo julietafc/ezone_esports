@@ -12,8 +12,12 @@
       <!-- <h1>Become the best <span>gamer</span></h1>
       <button class="btn">Start now</button> -->
       <div class="form__container">
-        <form class="form hidden">
+        <form class="form">
+        
+        <!-- GENERAL INFO -->
+        <div class="general">
           <div class="close">X</div>
+          <h2>General information</h2>
           <div class="form__element">
             <label for="fname">Full name:</label>
             <input id="fname" name="fname" type="text" placeholder="John Doe" required />
@@ -38,8 +42,104 @@
             <label for="pwd">Password:</label>
             <input type="password" id="pwd" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" required />
           </div>
-          <button class="btn next">Next</button>
-        </form>
+          <div class="form-btns">
+            <!-- back needs class hidden !!!!!!!!!!!!!!!!!!!!!!!!!! -->
+            <button class="btn back">Back</button>
+            <button class="btn next">Next</button>
+          </div>
+        </div>
+        
+        <!-- EQUIPMENT -->
+        <div class="equipment">
+          <div class="close">X</div>
+          <h2>Your equipment</h2>
+          <div class="form__element">
+            <label for="pc">Computer:</label>
+            <input id="pc" name="pc" type="text" placeholder=" e.g. HP Omen" required />
+          </div>
+          <div class="form__element">
+            <label for="screen">Main Screen:</label>
+            <input id="screen" name="screen" type="text" placeholder=" e.g. AOC 34" required />
+          </div>
+          <div class="form__element">
+            <label for="chair">Chair:</label>
+            <input id="chair" name="chair" type="text" placeholder=" e.g. Razer Tarok Pro" required />
+          </div>
+          <div class="form__element">
+            <label for="mouse">Mouse:</label>
+            <input id="mouse" name="mouse" type="text" placeholder=" e.g. SteelSeries Prime" required />
+          </div>
+          <div class="form__element">
+            <label for="keyb">Keyboard:</label>
+            <input id="keyb" name="keyb" type="text" placeholder=" e.g. Corsair K95 RGB Platinum " required />
+          </div>
+          <div class="form__element">
+            <label for="heads">Headset:</label>
+            <input id="heads" name="heads" type="text" placeholder=" e.g. JBL Quantum One" required />
+          </div>
+          
+          <div class="form-btns">
+            <button class="btn back">Back</button>
+            <button class="btn next">Next</button>
+          </div>
+        </div>
+        
+        <!-- GAME TYPES -->
+        <div class="gameT">
+          <div class="close">X</div>
+          <h2>Game preferences</h2>
+          <div class="form__element">
+            <label for="gameTypes">Game types: </label>
+            <div class="gameTypes__wrap">
+              <input id="fps" name="fps" type="checkbox" />
+              <label for="fps">FPS:</label>
+              <input id="mmorpg" name="mmorpg" type="checkbox" />
+              <label for="mmorpg">MMORPG:</label>
+              <input id="sports" name="sports" type="checkbox" />
+              <label for="sports">Sports:</label>
+              <input id="racing" name="racing" type="checkbox" />
+              <label for="racing">Racing:</label>
+              <input id="towerdef" name="towerdef" type="checkbox" />
+              <label for="towerdef">Tower defence:</label>
+              <input id="rts" name="rts" type="checkbox" />
+              <label for="rts">RTS:</label>
+              <input id="rpg" name="rpg" type="checkbox" />
+              <label for="rpg">RPG:</label>
+              <input id="adv" name="adv" type="checkbox" />
+              <label for="adv">Adventure:</label>
+              <input id="survival" name="survival" type="checkbox" />
+              <label for="survival">Survival:</label>
+              <input id="fight" name="fight" type="checkbox" />
+              <label for="fight">Fighting:</label>
+              <input id="btlr" name="btlr" type="checkbox" />
+              <label for="btlr">Battle royale:</label>
+              <input id="rhythm" name="rhythm" type="checkbox" />
+              <label for="rhythm">Rhythm:</label>
+              <input id="platform" name="platform" type="checkbox" />
+              <label for="platform">Platform:</label>
+            </div>
+          <div class="form-btns">
+            <button class="btn back">Back</button>
+            <button class="btn next">Next</button>
+          </div>
+        </div>
+        
+        <!-- GAMES -->
+        <div class="games">
+
+        </div>
+
+        <!-- HABITS -->
+        <div class="habits">
+
+        </div>
+
+        <!-- SKILLS -->
+        <div class="skills">
+
+        </div>
+
+      </form>
       </div>
     </main>
     <script type="module" src="/main.js"></script>

@@ -1,6 +1,27 @@
 @font-face {
-  font-family: "Shapiro Regular";
+  font-family: "shapiro regular";
   src: url("./fonts/sharpiro-regular.woff2") format("woff2"), url("./fonts/sharpiro-regular.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "shapiro bold";
+  src: url("./fonts/sharpiro-bold.woff2") format("woff2"), url("./fonts/sharpiro-bold.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "uniform black";
+  src: url("./fonts/uniform-pro-con-black.woff2") format("woff2"), url("./fonts/uniform-pro-con-black.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "uniform medium";
+  src: url("./fonts/uniform-pro-con-medium.woff2") format("woff2"), url("./fonts/uniform-pro-con-medium.woff2") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
