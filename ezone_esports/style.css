@@ -7,8 +7,29 @@
 }
 
 @font-face {
-  font-family: "Shapiro Regular";
+  font-family: "shapiro regular";
   src: url("./fonts/sharpiro-regular.woff2") format("woff2"), url("./fonts/sharpiro-regular.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "shapiro bold";
+  src: url("./fonts/sharpiro-bold.woff2") format("woff2"), url("./fonts/sharpiro-bold.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "uniform pro con black";
+  src: url("./fonts/uniform-pro-con-black.woff2") format("woff2"), url("./fonts/uniform-pro-con-black.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "uniform pro con medium";
+  src: url("./fonts/uniform-pro-con-medium.woff2") format("woff2"), url("./fonts/uniform-pro-con-medium.woff2") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -35,6 +56,10 @@
   --grey-pastel-clr: "#E3E3E5";
 }
 
+.hidden {
+  visibility: hidden;
+}
+/* -------------------------- MAIN AREA ------------------------ */
 main {
   height: 100vh;
   width: 100vw;
@@ -46,25 +71,33 @@ main {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .form {
   position: relative;
   background: var(--grey-pastel-clr);
   padding: 1rem;
+  margin: 0 1rem;
   backdrop-filter: blur(6px);
   box-shadow: 0 12px 28px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
   border-radius: 25px;
   z-index: 1;
+  /* transform: translateX(-50%, -50%); */
 }
 
 .close {
   display: flex;
   justify-content: end;
   padding-right: 1rem;
-  font-family: "Shapiro Regular";
+  font-family: "shapiro regular";
   color: aliceblue;
+}
+
+form h2 {
+  color: aliceblue;
+  font-family: "shapiro regular";
+  letter-spacing: 1px;
 }
 
 .form__element {
@@ -75,17 +108,24 @@ main {
 .form__element label {
   display: inline-block;
   width: 8rem;
-  font-family: "Shapiro Regular";
+  font-family: "shapiro regular";
   letter-spacing: 1px;
   color: aliceblue;
 }
 
+/*----------------------------- BUTTONS GOES BLING -----------------*/
+.form-btns {
+  display: flex;
+  justify-content: space-between;
+}
+
 .btn {
+  margin: 0.5rem;
   padding: 0.5rem 1rem;
   border: 4px solid transparent;
   border-radius: 6px;
   background: linear-gradient(220deg, #6259fa 60%, #b9f8b9) border-box;
-  font-family: "Shapiro Regular";
+  font-family: "shapiro regular";
   letter-spacing: 1px;
   color: #fff;
   text-decoration: none;
