@@ -1,0 +1,11 @@
+@media screen and (max-width: 1008px) {
+  .options_wrapper {
+    .options {
+      flex-direction: column;
+
+      .option {
+        min-height: 60px;
+      }
+    }
+  }
+}
