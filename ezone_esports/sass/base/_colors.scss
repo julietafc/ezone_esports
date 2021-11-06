@@ -1,20 +1,22 @@
 :root {
   scroll-behavior: smooth;
 
-  --orange-clr: "#F48D69";
-  --orange-light-clr: "#FFB591";
-  --orange-pastel-clr: "#F8DDCE";
+  --orange-clr: #f48d69;
+  --orange-light-clr: #ffb591;
+  --orange-pastel-clr: #f8ddce;
 
-  --blue-clr: "#3E14D6";
-  --blue-light-clr: "#6259FA";
-  --blue-pastel-clr: "#CACEFC";
+  --blue-clr: #3e14d6;
+  --blue-light-clr: #6259fa;
+  --blue-pastel-clr: #cacefc;
 
-  --green-clr: "#5BE080";
-  --green-light-clr: "#B9F8B9";
-  --green-pastel-clr: "#DFFCDF";
+  --green-clr: #5be080;
+  --green-light-clr: #b9f8b9;
+  --green-pastel-clr: #dffcdf;
 
-  --grey-clr: "#16162A";
-  --grey-medium-clr: "#3F3F50";
-  --grey-light-clr: "#A5A5AC";
-  --grey-pastel-clr: "#E3E3E5";
+  --grey-clr: #16162a;
+  --grey-medium-clr: #3f3f50;
+  --grey-light-clr: #a5a5ac;
+  --grey-pastel-clr: #e3e3e5;
+
+  --background-clr: rgba(22, 21, 43, 0.95);
 }
