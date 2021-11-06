@@ -7,12 +7,17 @@ form h2 {
 .form__element {
   padding: 0.75rem;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .form__element label {
-  display: inline-block;
-  width: 8rem;
-  font-family: "shapiro regular";
+  font-family: "shapiro bold";
   letter-spacing: 1px;
   color: aliceblue;
+}
+
+.form__element_wrapper {
+  position: absolute;
+  padding: 2em;
 }
