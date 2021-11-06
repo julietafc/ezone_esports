@@ -6,9 +6,9 @@ form h2 {
 
 .form__element {
   padding: 0.75rem;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  color: aliceblue;
 }
 
 .form__element label {
@@ -19,6 +19,47 @@ form h2 {
 
 .form__element_wrapper {
   position: absolute;
+  bottom: 20px;
   padding: 2em;
-  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: aliceblue;
+  min-height: 600px;
+  width: 90%;
+  cursor: default;
+}
+
+.game_types,
+.skill__wrap {
+  font-size: 1.05em;
+
+  li {
+    flex-direction: row;
+    align-items: center;
+    float: left;
+    width: 50%;
+    input {
+      margin-top: 0;
+    }
+  }
+
+  label {
+    position: relative;
+    font-size: 1.05em;
+    line-height: 1.7;
+    cursor: pointer;
+  }
+}
+
+.option3 {
+  .form__element_wrapper {
+    width: 100%;
+  }
+}
+.option6 {
+  .form__element_wrapper {
+    bottom: 0;
+    width: 100%;
+  }
 }

@@ -1,8 +1,26 @@
 input {
   padding: 0.5em;
   margin-top: 5px;
+  margin-right: 0.8rem;
 }
 
 input[type="file"] {
   color: white;
+}
+
+fieldset {
+  border: none;
+}
+
+legend {
+  color: white;
+}
+
+textarea {
+  margin-top: 2em;
+  padding: 1em;
+}
+
+.range-wrap {
+  margin-bottom: 3em;
 }
