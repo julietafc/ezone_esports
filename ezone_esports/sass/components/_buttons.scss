@@ -1,7 +1,9 @@
 /*----------------------------- BUTTONS GOES BLING -----------------*/
 .form-btns {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 5em;
 }
 
 .btn {
@@ -17,11 +19,59 @@
   transition: all 0.3s ease-in;
   font-size: 0.75rem;
   font-weight: 800;
-  margin-top: 30px;
-  float: right;
 
   &:hover {
     background-color: var(--orange-clr);
     color: black;
+  }
+}
+
+.next {
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  outline: none;
+  right: 10%;
+  margin-top: 3em;
+  transform: translateY(-50%) rotate(270deg);
+  fill: none;
+
+  &:hover {
+    // animation: MoveRight 0.9s ease-out infinite;
+  }
+}
+
+@keyframes MoveRight {
+  0% {
+    right: 60px;
+  }
+
+  50% {
+    right: 32px;
+  }
+}
+
+.back {
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  outline: none;
+  left: 10%;
+  margin-top: 3em;
+  transform: translateY(-50%) rotate(90deg);
+  fill: none;
+
+  &:hover {
+    // animation: MoveLeft 0.9s ease-out infinite;
+  }
+}
+
+@keyframes MoveLeft {
+  0% {
+    left: 60px;
+  }
+
+  50% {
+    left: 32px;
   }
 }
