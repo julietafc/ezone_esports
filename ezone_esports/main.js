@@ -1,6 +1,15 @@
 import "./style.scss";
 
-document.querySelector("#app").innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`;
+init();
+
+function init() {
+  document.querySelectorAll(".option").forEach((element) => {
+    element.addEventListener("click", () => {
+      if (document.querySelector(".option.active")) {
+        document.querySelector(".option.active").classList.remove("active");
+      }
+
+      element.classList.add("active");
+    });
+  });
+}
