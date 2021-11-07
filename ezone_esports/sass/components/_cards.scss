@@ -16,15 +16,15 @@
     overflow: hidden;
 
     min-width: 600px;
-    max-width: 900px;
+    max-width: 1020px;
     width: calc(100% - 100px);
 
-    height: 700px;
+    height: 730px;
 
     .option {
       position: relative;
       overflow: hidden;
-      min-width: 60px;
+      min-width: 90px;
       margin: 10px;
       background: var(--optionBackground, var(--defaultBackground, #e6e9ed));
       background-size: auto 120%;
@@ -39,7 +39,7 @@
         transform: scale(1);
         max-width: 600px;
         margin: 0px;
-        border-radius: 40px;
+        border-radius: 50px;
         background-color: #16152b;
         border: 2px solid var(--orange-clr);
         display: flex;
@@ -56,16 +56,13 @@
       }
       &:not(.active) {
         flex-grow: 1;
-        border-radius: 30px;
+        border-radius: 50px;
         border: 2px solid var(--blue-clr);
         background: none;
-        .shadow {
-          top: -40px;
-          box-shadow: inset 0 -120px 0px -120px black, inset 0 -120px 0px -100px black;
-        }
+
         .label {
-          top: 10px;
-          left: 8px;
+          top: 17px;
+          left: 17px;
           .info > div {
             left: 20px;
             opacity: 0;
@@ -74,17 +71,6 @@
         .form__element_wrapper {
           display: none;
         }
-      }
-
-      .shadow {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        right: 0px;
-
-        height: 120px;
-
-        transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
       }
       .label {
         display: flex;
@@ -97,10 +83,10 @@
           flex-direction: row;
           justify-content: center;
           align-items: center;
+          font-size: 1.5rem;
+          min-width: 50px;
 
-          min-width: 40px;
-          max-width: 40px;
-          height: 40px;
+          height: 50px;
           border-radius: 100%;
 
           background-color: white;

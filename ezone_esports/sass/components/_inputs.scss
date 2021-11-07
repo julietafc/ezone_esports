@@ -43,3 +43,33 @@ textarea {
   margin-top: 2em;
   padding: 1em;
 }
+
+input:is([type="checkbox"]) {
+  block-size: 1.2rem;
+  inline-size: 1.2rem;
+  border-radius: 4px;
+  display: grid;
+  outline: none;
+  transition: 0.1s;
+}
+
+input[type="checkbox"]::after {
+  content: "";
+  block-size: 0.45em;
+  inline-size: 0.8em;
+  border: solid #fff;
+  border-width: 0 0 2px 2px;
+  place-self: center;
+  transform: translateY(-0.05em) rotate(-45deg);
+  transition: 0.1s;
+  opacity: 0;
+  position: absolute;
+}
+input[type="checkbox"]:checked {
+  background: var(--orange-clr);
+  border-color: var(--orange-clr);
+  color: var(--orange-clr);
+}
+input[type="checkbox"]:checked::after {
+  opacity: 1;
+}
