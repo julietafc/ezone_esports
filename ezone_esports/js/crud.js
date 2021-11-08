@@ -1,5 +1,5 @@
 import { endpoint, headers } from "./settings.js";
-import { cleanForm } from "./script.js";
+import { cleanForm } from "../main.js";
 
 export function get(callback) {
   fetch(endpoint /*+ '?q={}&h={"$orderby": {"_created": -1}}'*/, {

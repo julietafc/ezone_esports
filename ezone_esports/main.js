@@ -14,12 +14,8 @@ function init() {
   });
 }
 
-("user strict");
-
-window.addEventListener("DOMContentLoaded", start);
-
-import { endpoint, headers } from "./settings.js";
-import { get, post } from "./crud.js";
+import { endpoint, headers } from "./js/settings.js";
+import { get, post } from "./js/crud.js";
 
 const fantasyCreature = {
   name: "",
