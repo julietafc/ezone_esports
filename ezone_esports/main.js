@@ -3,13 +3,12 @@ import "./style.scss";
 init();
 
 function init() {
-  document.querySelectorAll(".option").forEach((element) => {
-    element.addEventListener("click", () => {
-      if (document.querySelector(".option.active")) {
-        document.querySelector(".option.active").classList.remove("active");
-      }
+  document.querySelectorAll(".next, .back").forEach((element) => {
+    element.addEventListener("click", (e) => {
+      document.querySelector(".option.active").classList.remove("active");
 
-      element.classList.add("active");
+      console.log(e.currentTarget.dataset.step);
+      document.querySelector(`.${e.currentTarget.dataset.step}`).classList.add("active");
     });
   });
 }

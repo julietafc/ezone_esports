@@ -2,7 +2,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-top: 5em;
+  margin-top: 3em;
 }
 
 .btn {
@@ -36,10 +36,6 @@
   transform: translateY(-50%) rotate(270deg);
   fill: none;
   cursor: pointer;
-
-  &:hover {
-    // animation: MoveRight 0.9s ease-out infinite;
-  }
 }
 
 @keyframes MoveRight {
@@ -62,10 +58,6 @@
   transform: translateY(-50%) rotate(90deg);
   fill: none;
   cursor: pointer;
-
-  &:hover {
-    // animation: MoveLeft 0.9s ease-out infinite;
-  }
 }
 
 @keyframes MoveLeft {
