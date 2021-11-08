@@ -22,7 +22,7 @@ input {
   }
 
   &[type="range"] {
-    margin-bottom: 3em;
+    margin: 1rem 0 1rem 0;
     appearance: auto;
   }
 }
@@ -72,4 +72,19 @@ input[type="checkbox"]:checked {
 }
 input[type="checkbox"]:checked::after {
   opacity: 1;
+}
+
+.range-wrap {
+  margin-bottom: 2rem;
+}
+
+.range-wrap::before {
+  content: "1";
+  font-size: 1em;
+  font-family: system-ui;
+}
+.range-wrap::after {
+  content: "10";
+  font-size: 1em;
+  font-family: system-ui;
 }
