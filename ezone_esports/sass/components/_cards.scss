@@ -53,6 +53,12 @@
             left: 0px;
             opacity: 1;
           }
+
+          .number {
+            background-color: var(--orange-clr);
+            color: white;
+            border: none;
+          }
         }
       }
       &:not(.active) {
