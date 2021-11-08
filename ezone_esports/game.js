@@ -53,13 +53,13 @@ function selectCircleColor() {
 function startTimer() {
   // Checking if game is paused
   if (circleClicked === false) {
-    setTimeout(plusTime, 1);
+    setTimeout(plusTime, 10);
   } else {
     alert(`take you ${clickTime / 1000} seconds`);
   }
 }
 
 function plusTime() {
-  clickTime++;
+  clickTime = clickTime + 10;
   startTimer();
 }
