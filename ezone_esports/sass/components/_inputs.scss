@@ -60,10 +60,10 @@ input[type="checkbox"]::after {
   border: solid #fff;
   border-width: 0 0 2px 2px;
   place-self: center;
-  transform: translateY(-0.05em) rotate(-45deg);
+  transform: translate(-0.25em, -0.3em) rotate(-45deg);
   transition: 0.1s;
   opacity: 0;
-  position: absolute;
+  // position: absolute;
 }
 input[type="checkbox"]:checked {
   background: var(--orange-clr);
