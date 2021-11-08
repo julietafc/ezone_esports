@@ -11,6 +11,7 @@ input {
   outline: 0;
   transition-duration: 0.25s;
   font-weight: 300;
+  font-size: 1em;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.813);
@@ -18,17 +19,23 @@ input {
   &:focus {
     background-color: white;
     border: 2px solid var(--orange-clr);
-    color: var(--orange-clr);
+    color: var(--grey-medium-clr);
   }
 
   &[type="range"] {
     margin-bottom: 3em;
     appearance: auto;
   }
-}
 
-input[type="file"] {
-  color: white;
+  &[type="file"] {
+    color: white;
+    border: none;
+    background: none;
+
+    &:hover {
+      background: none;
+    }
+  }
 }
 
 fieldset {
