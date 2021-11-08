@@ -2,9 +2,25 @@
   .options_wrapper {
     .options {
       flex-direction: column;
+      height: auto;
+      min-width: 100%;
 
       .option {
         min-height: 60px;
+
+        .form__element_wrapper {
+          position: relative;
+          margin-top: 70px;
+        }
+
+        &.active {
+          max-width: 100%;
+        }
+
+        &:not(.active) .label {
+          top: 3px;
+          left: 2px;
+        }
       }
     }
   }
