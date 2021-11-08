@@ -1,4 +1,4 @@
-input {
+input:not([type="checkbox"]) {
   appearance: none;
   border: none;
   color: white;
@@ -51,13 +51,29 @@ textarea {
   padding: 1em;
 }
 
-input:is([type="checkbox"]) {
+input[type="checkbox"] {
+  appearance: none;
   block-size: 1.2rem;
   inline-size: 1.2rem;
   border-radius: 4px;
   display: grid;
   outline: none;
   transition: 0.1s;
+
+  border: 1px solid rgba(255, 255, 255, 0.813);
+  background-color: transparent;
+  border-radius: 6px;
+  padding: 0.8em;
+  margin-right: 10px;
+
+  transition-duration: 0.25s;
+  font-weight: 300;
+  font-size: 1em;
+
+  &:hover {
+    background: transparent;
+    border: 1px solid var(--blue-clr);
+  }
 }
 
 input[type="checkbox"]::after {
