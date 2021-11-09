@@ -89,7 +89,6 @@
         right: 0px;
         height: 40px;
         transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
-
         .info {
           display: flex;
           flex-direction: column;
@@ -132,6 +131,18 @@
             stroke-width: 2px;
           }
         }
+      }
+    }
+  }
+}
+
+.step5 {
+  .form__element_wrapper {
+    .form-btns {
+      justify-content: space-between;
+      .back,
+      .next {
+        position: relative;
       }
     }
   }
