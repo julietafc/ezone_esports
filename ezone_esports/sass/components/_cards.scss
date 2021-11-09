@@ -136,3 +136,15 @@
     }
   }
 }
+
+.step5 {
+  .form__element_wrapper {
+    .form-btns {
+      justify-content: space-between;
+      .back,
+      .next {
+        position: relative;
+      }
+    }
+  }
+}
