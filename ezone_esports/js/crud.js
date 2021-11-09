@@ -1,24 +1,25 @@
 import { endpoint, headers } from "./settings.js";
-import { cleanForm } from "../main.js";
+let athleteID;
 
-export function get(callback) {
-  fetch(endpoint /*+ '?q={}&h={"$orderby": {"_created": -1}}'*/, {
+export function get(athlete, query, nextPrev, callBack) {
+  fetch(endpoint + query, {
     method: "GET",
     headers,
   })
     .then((res) => res.json())
     .then((data) => {
-      // console.log(response);
-      const parent = document.querySelector(".container");
-      parent.innerHTML = "";
-      data.forEach(callback);
+      if (data[0]) {
+        alert("that email exist");
+      } else {
+        post(athlete, nextPrev, callBack);
+      }
     })
     .catch((err) => {
       console.error(err);
     });
 }
 
-export function post(callback, payout) {
+export function post(payout, nextPrev, callBack) {
   const postData = JSON.stringify(payout);
   fetch(endpoint, {
     method: "post",
@@ -28,12 +29,7 @@ export function post(callback, payout) {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-      if (data.status) {
-        console.log(data.status);
-        alert("that name all ready exist");
-      } else {
-        callback(data);
-        cleanForm();
-      }
+      document.querySelector("#btn-next-step1 circle").classList.remove("thinking");
+      callBack(nextPrev);
     });
 }

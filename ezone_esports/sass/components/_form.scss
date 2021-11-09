@@ -63,3 +63,22 @@ form h2 {
     width: 100%;
   }
 }
+
+#step1 {
+  &:valid {
+    .number {
+      background-color: cadetblue;
+    }
+    .next {
+      pointer-events: all;
+      opacity: 1;
+    }
+  }
+
+  &:invalid {
+    .next {
+      pointer-events: none;
+      opacity: 0.2;
+    }
+  }
+}
