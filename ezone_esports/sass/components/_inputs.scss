@@ -2,7 +2,7 @@ input:not([type="checkbox"]) {
   appearance: none;
   border: none;
   color: white;
-  border: 1px solid rgba(255, 255, 255, 0.813);
+  border: 2px solid rgba(255, 255, 255, 0.813);
   background-color: transparent;
   border-radius: 6px;
   padding: 0.8em;
@@ -21,7 +21,6 @@ input:not([type="checkbox"]) {
     border: 2px solid var(--orange-clr);
     color: var(--grey-medium-clr);
   }
-
   &[type="range"] {
     // margin-bottom: 3em;
     margin: 1rem 0 1rem 0;
@@ -110,4 +109,15 @@ input[type="checkbox"]:checked::after {
   content: "10";
   font-size: 1em;
   font-family: system-ui;
+}
+
+input:valid {
+  border-color: green;
+}
+input:invalid:not(:placeholder-shown) {
+  border-color: red;
+}
+input:invalid:not(:placeholder-shown),
+:focus {
+  border-color: red;
 }
