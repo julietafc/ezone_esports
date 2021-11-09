@@ -14,3 +14,10 @@ export const Athlete = {
   gamePreference: [],
   skills: [],
 };
+
+let firstDataPosted = false;
+function setFDP(value) {
+  firstDataPosted = value;
+}
+
+export { firstDataPosted, setFDP };

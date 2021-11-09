@@ -1,6 +1,12 @@
 import "./style.scss";
 import { get, post, put } from "./js/crud";
 import { Athlete } from "./js/settings";
+import { firstDataPosted } from "./js/settings";
+
+let btnStep1;
+const once = {
+  once: true,
+};
 
 init();
 
@@ -13,12 +19,12 @@ function init() {
     element.addEventListener("click", putData);
   });
 
-  const btnStep1 = document.querySelector("#btn-next-step1");
+  btnStep1 = document.querySelector("#btn-next-step1");
   btnStep1.removeEventListener("click", putData);
-  btnStep1.addEventListener("click", postData);
+  btnStep1.addEventListener("click", postData, once);
 }
 
-function takeClass(e) {
+export function takeClass(e) {
   const nextPrev = e.currentTarget.dataset.step;
   nextPrevStep(nextPrev);
 }

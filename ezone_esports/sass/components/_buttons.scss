@@ -70,10 +70,11 @@
   }
 }
 
-#btn-next-step1 svg {
+.next svg {
   overflow: visible;
 }
-#btn-next-step1 circle.thinking {
+
+circle.thinking {
   stroke: rgb(0, 26, 255);
   stroke-width: 5px;
   stroke-dasharray: 80;
