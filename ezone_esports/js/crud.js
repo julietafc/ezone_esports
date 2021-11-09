@@ -10,6 +10,7 @@ export function get(athlete, query, nextPrev, callBack) {
     .then((data) => {
       if (data[0]) {
         alert("that email exist");
+        document.querySelector("#btn-next-step1 circle").classList.remove("thinking");
       } else {
         post(athlete, nextPrev, callBack);
       }
