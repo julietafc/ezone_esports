@@ -16,13 +16,6 @@
         <form class="options">
           <div class="option active step1">
             <div class="label">
-              <div class="close">
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" data-v-533e0fd0="" class="">
-                  <circle cx="24" cy="24" r="23" stroke="#FFFFFF" data-v-533e0fd0=""></circle>
-                  <path class="path" d="M30.3643 17.6357L17.6363 30.3637" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" data-v-533e0fd0=""></path>
-                  <path class="path" d="M30.3643 30.3638L17.6363 17.6358" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" data-v-533e0fd0=""></path>
-                </svg>
-              </div>
               <div class="number">1</div>
               <div class="info">
                 <div class="main">Personal Information</div>
@@ -65,19 +58,12 @@
               </div>
             </div>
           </div>
-          <div class="option step2">
+          <!-- <div class="option step2">
             <div class="label">
               <div class="number">2</div>
               <div class="info">
                 <div class="main">Equipment</div>
                 <div class="sub">Here there will be small text?</div>
-              </div>
-              <div class="close">
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" data-v-533e0fd0="" class="">
-                  <circle cx="24" cy="24" r="23" stroke="#FFFFFF" data-v-533e0fd0=""></circle>
-                  <path class="path" d="M30.3643 17.6357L17.6363 30.3637" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" data-v-533e0fd0=""></path>
-                  <path class="path" d="M30.3643 30.3638L17.6363 17.6358" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" data-v-533e0fd0=""></path>
-                </svg>
               </div>
             </div>
 
@@ -122,20 +108,13 @@
                 </button>
               </div>
             </div>
-          </div>
-          <div class="option step3">
+          </div> -->
+          <div class="option step2">
             <div class="label">
-              <div class="number">3</div>
+              <div class="number">2</div>
               <div class="info">
                 <div class="main">Game preference</div>
                 <div class="sub">Here there will be small text?</div>
-              </div>
-              <div class="close">
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" data-v-533e0fd0="" class="">
-                  <circle cx="24" cy="24" r="23" stroke="#FFFFFF" data-v-533e0fd0=""></circle>
-                  <path class="path" d="M30.3643 17.6357L17.6363 30.3637" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" data-v-533e0fd0=""></path>
-                  <path class="path" d="M30.3643 30.3638L17.6363 17.6358" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" data-v-533e0fd0=""></path>
-                </svg>
               </div>
             </div>
 
@@ -203,6 +182,36 @@
               </fieldset>
 
               <div class="form-btns">
+                <button class="back" data-step="step1" type="button">
+                  <svg data-v-e6f7aebe="" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
+                    <circle data-v-e6f7aebe="" cx="24" cy="24" r="24" transform="rotate(90 24 24)" fill="white"></circle>
+                    <path data-v-e6f7aebe="" d="M23.6842 16.8L23.6842 31.2M23.6842 31.2L30 24.8842M23.6842 31.2L17.3684 24.8842" stroke="#222222" stroke-width="1.5"></path>
+                  </svg>
+                </button>
+                <button class="next" data-step="step3" type="button">
+                  <svg data-v-e6f7aebe="" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
+                    <circle data-v-e6f7aebe="" cx="24" cy="24" r="24" transform="rotate(90 24 24)" fill="white"></circle>
+                    <path data-v-e6f7aebe="" d="M23.6842 16.8L23.6842 31.2M23.6842 31.2L30 24.8842M23.6842 31.2L17.3684 24.8842" stroke="#222222" stroke-width="1.5"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="option step3">
+            <div class="label">
+              <div class="number">3</div>
+              <div class="info">
+                <div class="main">Game preference</div>
+                <div class="sub">Here there will be small text?</div>
+              </div>
+            </div>
+            <div class="form__element_wrapper">
+              <div class="form__element">
+                <label for="games">Games you play</label>
+                <p>Enter one game per line</p>
+                <textarea name="games" id="games" rows="8" cols="48" placeholder="e.g. Counter-Strike" required></textarea>
+              </div>
+              <div class="form-btns">
                 <button class="back" data-step="step2" type="button">
                   <svg data-v-e6f7aebe="" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
                     <circle data-v-e6f7aebe="" cx="24" cy="24" r="24" transform="rotate(90 24 24)" fill="white"></circle>
@@ -222,52 +231,8 @@
             <div class="label">
               <div class="number">4</div>
               <div class="info">
-                <div class="main">Game preference</div>
-                <div class="sub">Here there will be small text?</div>
-              </div>
-              <div class="close">
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" data-v-533e0fd0="" class="">
-                  <circle cx="24" cy="24" r="23" stroke="#FFFFFF" data-v-533e0fd0=""></circle>
-                  <path class="path" d="M30.3643 17.6357L17.6363 30.3637" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" data-v-533e0fd0=""></path>
-                  <path class="path" d="M30.3643 30.3638L17.6363 17.6358" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" data-v-533e0fd0=""></path>
-                </svg>
-              </div>
-            </div>
-            <div class="form__element_wrapper">
-              <div class="form__element">
-                <label for="games">Games you play</label>
-                <p>Enter one game per line</p>
-                <textarea name="games" id="games" rows="8" cols="48" placeholder="e.g. Counter-Strike" required></textarea>
-              </div>
-              <div class="form-btns">
-                <button class="back" data-step="step3" type="button">
-                  <svg data-v-e6f7aebe="" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
-                    <circle data-v-e6f7aebe="" cx="24" cy="24" r="24" transform="rotate(90 24 24)" fill="white"></circle>
-                    <path data-v-e6f7aebe="" d="M23.6842 16.8L23.6842 31.2M23.6842 31.2L30 24.8842M23.6842 31.2L17.3684 24.8842" stroke="#222222" stroke-width="1.5"></path>
-                  </svg>
-                </button>
-                <button class="next" data-step="step5" type="button">
-                  <svg data-v-e6f7aebe="" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
-                    <circle data-v-e6f7aebe="" cx="24" cy="24" r="24" transform="rotate(90 24 24)" fill="white"></circle>
-                    <path data-v-e6f7aebe="" d="M23.6842 16.8L23.6842 31.2M23.6842 31.2L30 24.8842M23.6842 31.2L17.3684 24.8842" stroke="#222222" stroke-width="1.5"></path>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="option step5">
-            <div class="label">
-              <div class="number">5</div>
-              <div class="info">
                 <div class="main">Habits</div>
                 <div class="sub">Omuke trughte a otufta</div>
-              </div>
-              <div class="close">
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" data-v-533e0fd0="" class="">
-                  <circle cx="24" cy="24" r="23" stroke="#FFFFFF" data-v-533e0fd0=""></circle>
-                  <path class="path" d="M30.3643 17.6357L17.6363 30.3637" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" data-v-533e0fd0=""></path>
-                  <path class="path" d="M30.3643 30.3638L17.6363 17.6358" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" data-v-533e0fd0=""></path>
-                </svg>
               </div>
             </div>
             <div class="form__element_wrapper">
@@ -342,13 +307,13 @@
                 </li>
               </ul>
               <div class="form-btns">
-                <button class="back" data-step="step4" type="button">
+                <button class="back" data-step="step3" type="button">
                   <svg data-v-e6f7aebe="" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
                     <circle data-v-e6f7aebe="" cx="24" cy="24" r="24" transform="rotate(90 24 24)" fill="white"></circle>
                     <path data-v-e6f7aebe="" d="M23.6842 16.8L23.6842 31.2M23.6842 31.2L30 24.8842M23.6842 31.2L17.3684 24.8842" stroke="#222222" stroke-width="1.5"></path>
                   </svg>
                 </button>
-                <button class="next" data-step="step6" type="button">
+                <button class="next" data-step="step5" type="button">
                   <svg data-v-e6f7aebe="" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
                     <circle data-v-e6f7aebe="" cx="24" cy="24" r="24" transform="rotate(90 24 24)" fill="white"></circle>
                     <path data-v-e6f7aebe="" d="M23.6842 16.8L23.6842 31.2M23.6842 31.2L30 24.8842M23.6842 31.2L17.3684 24.8842" stroke="#222222" stroke-width="1.5"></path>
@@ -357,19 +322,12 @@
               </div>
             </div>
           </div>
-          <div class="option step6">
+          <div class="option step5">
             <div class="label">
-              <div class="number">6</div>
+              <div class="number">5</div>
               <div class="info">
                 <div class="main">Skills</div>
                 <div class="sub">Here there will be small text?</div>
-              </div>
-              <div class="close">
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" data-v-533e0fd0="" class="">
-                  <circle cx="24" cy="24" r="23" stroke="#FFFFFF" data-v-533e0fd0=""></circle>
-                  <path class="path" d="M30.3643 17.6357L17.6363 30.3637" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" data-v-533e0fd0=""></path>
-                  <path class="path" d="M30.3643 30.3638L17.6363 17.6358" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" data-v-533e0fd0=""></path>
-                </svg>
               </div>
             </div>
 
@@ -437,7 +395,7 @@
               </fieldset>
 
               <div class="form-btns">
-                <button class="back" data-step="step5" type="button">
+                <button class="back" data-step="step4" type="button">
                   <svg data-v-e6f7aebe="" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
                     <circle data-v-e6f7aebe="" cx="24" cy="24" r="24" transform="rotate(90 24 24)" fill="white"></circle>
                     <path data-v-e6f7aebe="" d="M23.6842 16.8L23.6842 31.2M23.6842 31.2L30 24.8842M23.6842 31.2L17.3684 24.8842" stroke="#222222" stroke-width="1.5"></path>
@@ -446,6 +404,13 @@
                 <button action="submit" class="btn submit">Submit</button>
               </div>
             </div>
+          </div>
+          <div class="close">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" data-v-533e0fd0="" class="">
+              <circle cx="24" cy="24" r="23" stroke="#FFFFFF" data-v-533e0fd0=""></circle>
+              <path class="path" d="M30.3643 17.6357L17.6363 30.3637" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" data-v-533e0fd0=""></path>
+              <path class="path" d="M30.3643 30.3638L17.6363 17.6358" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" data-v-533e0fd0=""></path>
+            </svg>
           </div>
         </form>
       </div>
