@@ -21,7 +21,7 @@ form h2 {
   // position: absolute;
   // bottom: 20px;
   padding: 2em;
-  padding-top: 8rem;
+  padding-top: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -53,18 +53,19 @@ form h2 {
   }
 }
 
-.option3 {
+.step3 {
   .form__element_wrapper {
     width: 100%;
   }
 }
-.option6 {
+.step6 {
   .form__element_wrapper {
     bottom: 0;
     width: 100%;
   }
 }
-.option5 {
+
+.step5 {
   .form__element_wrapper {
     overflow-y: scroll;
   }

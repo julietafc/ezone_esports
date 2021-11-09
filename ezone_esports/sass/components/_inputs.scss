@@ -1,4 +1,4 @@
-input {
+input:not([type="checkbox"]) {
   appearance: none;
   border: none;
   color: white;
@@ -11,6 +11,7 @@ input {
   outline: 0;
   transition-duration: 0.25s;
   font-weight: 300;
+  font-size: 1em;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.813);
@@ -18,17 +19,24 @@ input {
   &:focus {
     background-color: white;
     border: 2px solid var(--orange-clr);
-    color: var(--orange-clr);
+    color: var(--grey-medium-clr);
   }
 
   &[type="range"] {
+    // margin-bottom: 3em;
     margin: 1rem 0 1rem 0;
     appearance: auto;
   }
-}
 
-input[type="file"] {
-  color: white;
+  &[type="file"] {
+    color: white;
+    border: none;
+    background: none;
+
+    &:hover {
+      background: none;
+    }
+  }
 }
 
 fieldset {
@@ -44,13 +52,29 @@ textarea {
   padding: 1em;
 }
 
-input:is([type="checkbox"]) {
+input[type="checkbox"] {
+  appearance: none;
   block-size: 1.2rem;
   inline-size: 1.2rem;
   border-radius: 4px;
   display: grid;
   outline: none;
   transition: 0.1s;
+
+  border: 1px solid rgba(255, 255, 255, 0.813);
+  background-color: transparent;
+  border-radius: 6px;
+  padding: 0.8em;
+  margin-right: 10px;
+
+  transition-duration: 0.25s;
+  font-weight: 300;
+  font-size: 1em;
+
+  &:hover {
+    background: transparent;
+    border: 1px solid var(--blue-clr);
+  }
 }
 
 input[type="checkbox"]::after {
@@ -63,7 +87,6 @@ input[type="checkbox"]::after {
   transform: translate(-0.4em, -0.25em) rotate(-45deg);
   transition: 0.1s;
   opacity: 0;
-  // position: absolute;
 }
 input[type="checkbox"]:checked {
   background: var(--orange-clr);

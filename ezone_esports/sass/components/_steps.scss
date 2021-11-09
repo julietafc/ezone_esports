@@ -1,0 +1,25 @@
+.number {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  min-width: 50px;
+  font-family: "shapiro bold";
+
+  height: 50px;
+  border-radius: 100%;
+
+  border: 1px solid white;
+  color: white;
+}
+
+.number_focus {
+  background-color: var(--orange-clr);
+  color: white;
+}
+
+.number_complete {
+  background-color: var(--green-clr);
+  color: white;
+}
