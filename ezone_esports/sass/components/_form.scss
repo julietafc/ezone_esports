@@ -65,7 +65,26 @@ form h2 {
   }
 }
 
-.step5 {
+#step1 {
+  &:valid {
+    .number {
+      background-color: cadetblue;
+    }
+    .next {
+      pointer-events: all;
+      opacity: 1;
+    }
+  }
+
+  &:invalid {
+    .next {
+      pointer-events: none;
+      opacity: 0.2;
+    }
+  }
+}
+
+.step4 {
   .form__element_wrapper {
     overflow-y: scroll;
   }

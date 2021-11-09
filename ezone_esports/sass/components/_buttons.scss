@@ -69,3 +69,25 @@
     left: 32px;
   }
 }
+
+#btn-next-step1 svg {
+  overflow: visible;
+}
+#btn-next-step1 circle.thinking {
+  stroke: rgb(0, 26, 255);
+  stroke-width: 5px;
+  stroke-dasharray: 80;
+  stroke-linecap: round;
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: rotate(0deg);
+  animation: dash 2s linear infinite;
+  filter: blur(0.5px) drop-shadow(0 2px 10px rgb(0, 26, 255));
+}
+
+@keyframes dash {
+  to {
+    transform: rotate(360deg);
+    // stroke-dashoffset: 400;
+  }
+}
