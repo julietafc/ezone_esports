@@ -1,4 +1,5 @@
 import { endpoint, headers } from "./settings.js";
+
 let athleteID;
 
 export function get(athlete, query, nextPrev, callBack) {
@@ -29,8 +30,25 @@ export function post(payout, nextPrev, callBack) {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      console.log(data._id);
+      athleteID = data._id;
       document.querySelector("#btn-next-step1 circle").classList.remove("thinking");
       callBack(nextPrev);
+    });
+}
+
+export function put(nextPrev, data, callBack) {
+  let postData = JSON.stringify(data);
+
+  fetch(endpoint + "/" + athleteID, {
+    method: "put",
+    headers,
+    body: postData,
+  })
+    .then((d) => d.json())
+    .then((res) => {
+      document.querySelector(".next circle.thinking").classList.remove("thinking");
+      callBack(nextPrev);
+      console.log(res);
     });
 }

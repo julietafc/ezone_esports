@@ -1,15 +1,20 @@
 import "./style.scss";
-import { get, post } from "./js/crud";
+import { get, post, put } from "./js/crud";
 import { Athlete } from "./js/settings";
 
 init();
 
 function init() {
-  document.querySelectorAll(".next, .back").forEach((element) => {
+  document.querySelectorAll(".back").forEach((element) => {
     element.addEventListener("click", takeClass);
   });
+
+  document.querySelectorAll(".next").forEach((element) => {
+    element.addEventListener("click", putData);
+  });
+
   const btnStep1 = document.querySelector("#btn-next-step1");
-  btnStep1.removeEventListener("click", takeClass);
+  btnStep1.removeEventListener("click", putData);
   btnStep1.addEventListener("click", postData);
 }
 
@@ -51,4 +56,20 @@ function postData(e) {
 
   //call
   get(athlete, query, nextPrev, nextPrevStep);
+}
+
+function putData(e) {
+  const nextPrev = e.currentTarget.dataset.step;
+  const fieldToPost = e.currentTarget.dataset.field;
+  console.log(e.currentTarget);
+  e.currentTarget.querySelector("circle").classList.add("thinking");
+  let data = [];
+  const checkedBoxes = document.querySelectorAll("fieldset.step2 input[type=checkbox]:checked");
+  checkedBoxes.forEach((checkBox) => {
+    data.push(checkBox.value);
+  });
+  const dataObj = {};
+  dataObj[fieldToPost] = data;
+  console.log(dataObj);
+  put(nextPrev, dataObj, nextPrevStep);
 }
