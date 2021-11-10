@@ -96,19 +96,25 @@ input[type="checkbox"]:checked::after {
   opacity: 1;
 }
 
-.range-wrap {
+.radio-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  // text-align: center;
   margin-bottom: 2rem;
-}
+  gap: 1rem;
 
-.range-wrap::before {
-  content: "1";
-  font-size: 1em;
-  font-family: system-ui;
-}
-.range-wrap::after {
-  content: "10";
-  font-size: 1em;
-  font-family: system-ui;
+  .gWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  input {
+    border-radius: 50%;
+  }
 }
 
 input:valid {
@@ -122,12 +128,18 @@ input:invalid:not(:placeholder-shown),
   border-color: red;
 }
 
-input:invalid:not(:placeholder-shown) + .requirements {
-  // padding: 0 30px 0 50px;
-  // color: #999;
-  max-height: 0;
-  transition: 0.28s;
-  overflow: hidden;
-  color: red;
+.requirements {
+  visibility: hidden;
+  position: absolute;
+  margin: 0.21rem 0 0 3.5rem;
   font-style: italic;
+}
+
+.pass {
+  margin-left: 6rem;
+}
+
+input:invalid:not(:placeholder-shown) + .requirements {
+  visibility: visible;
+  color: red;
 }
