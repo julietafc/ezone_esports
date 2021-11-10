@@ -102,5 +102,13 @@
     left: 26rem;
     bottom: 1.8rem;
     cursor: pointer;
+    font-size: 20px;
+  }
+
+  &:hover {
+    color: var(--blue-clr);
+  }
+  &:focus {
+    color: var(--blue-clr);
   }
 }

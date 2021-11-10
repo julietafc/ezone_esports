@@ -118,7 +118,7 @@ input[type="checkbox"]:checked::after {
 }
 
 input:valid {
-  border-color: green;
+  border-color: var(--green-clr);
 }
 input:invalid:not(:placeholder-shown, :focus) {
   border-color: red;
