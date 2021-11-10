@@ -114,10 +114,20 @@ input[type="checkbox"]:checked::after {
 input:valid {
   border-color: green;
 }
-input:invalid:not(:placeholder-shown) {
+input:invalid:not(:placeholder-shown, :focus) {
   border-color: red;
 }
 input:invalid:not(:placeholder-shown),
 :focus {
   border-color: red;
+}
+
+input:invalid:not(:placeholder-shown) + .requirements {
+  // padding: 0 30px 0 50px;
+  // color: #999;
+  max-height: 0;
+  transition: 0.28s;
+  overflow: hidden;
+  color: red;
+  font-style: italic;
 }
