@@ -2,7 +2,7 @@ input:not([type="checkbox"]) {
   appearance: none;
   border: none;
   color: white;
-  border: 1px solid rgba(255, 255, 255, 0.813);
+  border: 2px solid rgba(255, 255, 255, 0.813);
   background-color: transparent;
   border-radius: 6px;
   padding: 0.8em;
@@ -21,7 +21,6 @@ input:not([type="checkbox"]) {
     border: 2px solid var(--orange-clr);
     color: var(--grey-medium-clr);
   }
-
   &[type="range"] {
     // margin-bottom: 3em;
     margin: 1rem 0 1rem 0;
@@ -97,17 +96,50 @@ input[type="checkbox"]:checked::after {
   opacity: 1;
 }
 
-.range-wrap {
+.radio-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  // text-align: center;
   margin-bottom: 2rem;
+  gap: 1rem;
+
+  .gWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  input {
+    border-radius: 50%;
+  }
 }
 
-.range-wrap::before {
-  content: "1";
-  font-size: 1em;
-  font-family: system-ui;
+input:valid {
+  border-color: green;
 }
-.range-wrap::after {
-  content: "10";
-  font-size: 1em;
-  font-family: system-ui;
+input:invalid:not(:placeholder-shown, :focus) {
+  border-color: red;
+}
+input:invalid:not(:placeholder-shown),
+:focus {
+  border-color: red;
+}
+
+.requirements {
+  visibility: hidden;
+  position: absolute;
+  margin: 0.21rem 0 0 3.5rem;
+  font-style: italic;
+}
+
+.pass {
+  margin-left: 6rem;
+}
+
+input:invalid:not(:placeholder-shown) + .requirements {
+  visibility: visible;
+  color: red;
 }

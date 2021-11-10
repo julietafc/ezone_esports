@@ -5,6 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ezone Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
     <!-- <link rel="stylesheet" href="/style.scss" /> -->
   </head>
   <body>
@@ -37,6 +38,7 @@
               <div class="form__element">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" placeholder="jdnewb@mail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required />
+                <span class="requirements">Must be a valid email address.</span>
               </div>
               <div class="form__element">
                 <label for="gtag">Gamertag</label>
@@ -46,9 +48,11 @@
                 <label for="img">Avatar</label>
                 <input type="file" id="img" name="img" accept="image/*" />
               </div>
-              <div class="form__element">
+              <div class="form__element posRel">
                 <label for="pwd">Password</label>
                 <input type="password" id="pwd" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" required />
+                <i class="bi bi-eye-slash" id="togglePassword"></i>
+                <span class="requirements pass">Must be a valid email password.</span>
               </div>
               <div class="form-btns">
                 <button id="btn-next-step1" class="next" data-step="step2" type="button">
@@ -157,14 +161,95 @@
               <div class="number">3</div>
               <div class="info">
                 <div class="main">Game preference</div>
-                <div class="sub">Here there will be small text?</div>
+                <div class="sub">Select some of the games you enjoy</div>
               </div>
             </div>
             <div class="form__element_wrapper">
               <div class="form__element">
-                <label for="games">Games you play</label>
-                <p>Enter one game per line</p>
-                <textarea name="games" id="games" rows="8" cols="48" placeholder="e.g. Counter-Strike" required></textarea>
+                <label for="games">Select at least 3 games</label>
+                <!-- <div id="selector">
+                  <select id="multiselect" class="multiStyles" name="games" multiple="multiple">
+                    <option value="csgo" selected><input type="checkbox" name="csgo" id="games" />CS:GO</option>
+                    <option value="tekken">Tekken</option>
+                    <option value="fifa" selected>FIFA</option>
+                    <option value="supermario">Super Mario</option>
+                    <option value="fortnite">Fortnite</option>
+                    <option value="cod">Call of Duty</option>
+                    <option value="sims">The Sims</option>
+                    <option value="mortalcombat">Mortal Combat</option>
+                    <option value="guitarhero">Guitar Hero</option>
+                    <option value="wow">World of Warcraft</option>
+                    <option value="skyrim">ES6: Skyrim</option>
+                    <option value="starcraft">Starcraft</option>
+                    <option value="warcraft">Warcraft</option>
+                    <option value="lol">League of Legends</option>
+                    <option value="dota">Dota</option>
+                    <option value="valorant">Valorant</option>
+                    <option value="lfd">Left for dead</option>
+                    <option value="overwatch">Overwatch</option>
+                    <option value="pugb">PUBG</option>
+                    <option value="diablo">Diablo</option>
+                    <option value="minecraft">Minecraft</option>
+                  </select>
+                </div> -->
+                <ul class="skill__wrap">
+                  <li class="form__element">
+                    <input id="csgo" name="csgo" type="checkbox" />
+                    <label for="csgo">CS:GO</label>
+                  </li>
+                  <li class="form__element">
+                    <input id="tekken" name="tekken" type="checkbox" />
+                    <label for="tekken">Tekken</label>
+                  </li>
+                  <li class="form__element">
+                    <input id="fifa" name="fifa" type="checkbox" />
+                    <label for="fifa">FIFA</label>
+                  </li>
+                  <li class="form__element">
+                    <input id="supermario" name="supermario" type="checkbox" />
+                    <label for="supermario">Super Mario</label>
+                  </li>
+                  <li class="form__element">
+                    <input id="fortnite" name="fortnite" type="checkbox" />
+                    <label for="fortnite">Fortnite</label>
+                  </li>
+                  <li class="form__element">
+                    <input id="cod" name="cod" type="checkbox" />
+                    <label for="cod">Call of Duty</label>
+                  </li>
+                  <li class="form__element">
+                    <input id="PUBG" name="PUBGPUBG" type="checkbox" />
+                    <label for="PUBG">PUBG</label>
+                  </li>
+                  <li class="form__element">
+                    <input id="mortalcombat" name="mortalcombat" type="checkbox" />
+                    <label for="mortalcombat">Mortal Combat</label>
+                  </li>
+                  <li class="form__element">
+                    <input id="overwatch" name="overwatch" type="checkbox" />
+                    <label for="overwatch">Overwatch</label>
+                  </li>
+                  <li class="form__element">
+                    <input id="wow" name="wow" type="checkbox" />
+                    <label for="wow">World of Warcraft</label>
+                  </li>
+                  <li class="form__element">
+                    <input id="es6" name="es6" type="checkbox" />
+                    <label for="es6">Elder Scrolls: Skyrim</label>
+                  </li>
+                  <li class="form__element">
+                    <input id="starcraft" name="starcraft" type="checkbox" />
+                    <label for="starcraft">Starcraft</label>
+                  </li>
+                  <li class="form__element">
+                    <input id="warcraft" name="warcraft" type="checkbox" />
+                    <label for="warcraft">Warcraft</label>
+                  </li>
+                  <li class="form__element">
+                    <input id="lol" name="lol" type="checkbox" />
+                    <label for="lol">League of Legends</label>
+                  </li>
+                </ul>
               </div>
               <div class="form-btns">
                 <button class="back" data-step="step2" type="button">
@@ -192,71 +277,90 @@
               </div>
             </div>
             <div class="form__element_wrapper">
-              <label for="hours">Weekly hours playing from 1-20</label>
-              <div class="range-wrap">
-                <input type="range" step="1" min="0" max="20" value="1" id="hours" name="hours" />
+              <label for="gHours">How many hours a week do you play?</label>
+              <div class="radio-wrap">
+                <div class="gWrap">
+                  <input type="radio" id="14" name="playtime" value="14" required />
+                  <label for="14">1-4</label>
+                </div>
+                <div class="gWrap">
+                  <input type="radio" id="59" name="playtime" value="59" required />
+                  <label for="59">5-9</label>
+                </div>
+                <div class="gWrap">
+                  <input type="radio" id="1014" name="playtime" value="1014" required />
+                  <label for="1015">10-14</label>
+                </div>
+                <div class="gWrap">
+                  <input type="radio" id="15" name="playtime" value="15" required />
+                  <label for="15">15+</label>
+                </div>
               </div>
 
-              <label for="workout">Weekly hours physical exercise from 1-10</label>
-              <div class="range-wrap">
-                <input type="range" step="1" min="0" max="10" value="1" id="workout" name="workout" />
+              <label for="wHours">How many hours a week do you workout?</label>
+              <div class="radio-wrap">
+                <div class="gWrap">
+                  <input type="radio" id="12" name="workout" value="12" required />
+                  <label for="12">1-2</label>
+                </div>
+                <div class="gWrap">
+                  <input type="radio" id="23" name="workout" value="23" required />
+                  <label for="23">2-3</label>
+                </div>
+                <div class="gWrap">
+                  <input type="radio" id="34" name="workout" value="34" required />
+                  <label for="34">3-4</label>
+                </div>
+                <div class="gWrap">
+                  <input type="radio" id="5" name="workout" value="5" required />
+                  <label for="5">5+</label>
+                </div>
               </div>
 
-              <label for="mental">Rate your mental wellbeing from 1-10</label>
-              <div class="range-wrap">
-                <input type="range" step="1" min="0" max="10" value="1" id="mental" name="mental" />
+              <label for="sHours">How much do you sleep on average?</label>
+              <div class="radio-wrap">
+                <div class="gWrap">
+                  <input type="radio" id="56" name="sleep" value="56" required />
+                  <label for="56">5-6</label>
+                </div>
+                <div class="gWrap">
+                  <input type="radio" id="67" name="sleep" value="67" required />
+                  <label for="67">6-7</label>
+                </div>
+                <div class="gWrap">
+                  <input type="radio" id="78" name="sleep" value="78" required />
+                  <label for="78">7-8</label>
+                </div>
+                <div class="gWrap">
+                  <input type="radio" id="8" name="sleep" value="8" required />
+                  <label for="8">8+</label>
+                </div>
               </div>
-              <label for="foods">What kind of food do you primarily consume?</label>
-              <ul class="skill__wrap">
-                <li class="form__element">
-                  <input id="salads" name="salads" type="checkbox" required />
-                  <label for="salads">Salads</label>
-                </li>
-                <li class="form__element">
-                  <input id="pizza" name="pizza" type="checkbox" required />
-                  <label for="pizza">Pizza</label>
-                </li>
-                <li class="form__element">
-                  <input id="fruits" name="fruits" type="checkbox" />
-                  <label for="fruits">Fruits</label>
-                </li>
-                <li class="form__element">
-                  <input id="chips" name="chips" type="checkbox" />
-                  <label for="chips">Chips</label>
-                </li>
-                <li class="form__element">
-                  <input id="nuts" name="nuts" type="checkbox" />
-                  <label for="nuts">Nuts</label>
-                </li>
-                <li class="form__element">
-                  <input id="burger" name="burger" type="checkbox" />
-                  <label for="burger">Burger</label>
-                </li>
-              </ul>
 
-              <label for="drinks">What kind of beverages do you primarily consume?</label>
-              <ul class="skill__wrap">
-                <li class="form__element">
-                  <input id="water" name="water" type="checkbox" />
-                  <label for="water">Water</label>
-                </li>
-                <li class="form__element">
-                  <input id="coffee" name="coffee" type="checkbox" />
-                  <label for="coffee">Coffee</label>
-                </li>
-                <li class="form__element">
-                  <input id="tea" name="tea" type="checkbox" />
-                  <label for="tea">Tea</label>
-                </li>
-                <li class="form__element">
-                  <input id="sodas" name="sodas" type="checkbox" />
-                  <label for="sodas">Sodas</label>
-                </li>
-                <li class="form__element">
-                  <input id="energyD" name="energyD" type="checkbox" />
-                  <label for="energyD">Energy drinks</label>
-                </li>
-              </ul>
+              <label for="foods">How healthy do you eat and drink?</label>
+              <div class="radio-wrap">
+                <div class="gWrap">
+                  <input type="radio" id="not" name="food" value="not" required />
+                  <label for="not">Not healthy</label>
+                </div>
+                <div class="gWrap">
+                  <input type="radio" id="bAve" name="food" value="bAve" required />
+                  <label for="bAve">Below Average</label>
+                </div>
+                <div class="gWrap">
+                  <input type="radio" id="ave" name="food" value="ave" required />
+                  <label for="ave">Average</label>
+                </div>
+                <div class="gWrap">
+                  <input type="radio" id="healthy" name="food" value="healthy" required />
+                  <label for="healthy">Healthy</label>
+                </div>
+                <div class="gWrap">
+                  <input type="radio" id="vHealthy" name="food" value="vHealthy" required />
+                  <label for="vHealthy">Very Healthy</label>
+                </div>
+              </div>
+
               <div class="form-btns">
                 <button class="back" data-step="step3" type="button">
                   <svg data-v-e6f7aebe="" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
@@ -368,6 +472,7 @@
         </form>
       </div>
     </main>
-    <script type="module" src="main.js"></script>
+    <script type="module" src="/main.js"></script>
+    <script type="module" src="password.js"></script>
   </body>
 </html>
