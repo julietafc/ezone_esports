@@ -4,8 +4,9 @@ import { Athlete } from "./js/settings";
 import { formState } from "./js/settings";
 
 let btnStep1;
+let gamerName;
 
-init();
+window.addEventListener("load", init);
 
 function init() {
   document.querySelectorAll(".back").forEach((element) => {
@@ -21,7 +22,7 @@ function init() {
   btnStep1.addEventListener("click", postData);
 
   addDataToInputs();
-  //addRequiredToBox();
+  addRequiredToBox();
 }
 
 const form = document.querySelector("form.options");
@@ -49,7 +50,7 @@ function postData(e) {
   athlete.email = email;
   athlete.gamerTag = document.querySelector("#gtag").value;
   athlete.fakePassword = document.querySelector("#pwd").value;
-
+  gamerName = takeName(document.querySelector("#fname").value);
   //call
   get(athlete, query, nextPrev, postData);
 }
@@ -90,27 +91,37 @@ function addDataToInputs() {
 function manageImputChanges(e) {
   if (formState.step1Posted) {
     const step = e.currentTarget.dataset.formStep;
-    if (step === "step2") {
-      stepTwo(e);
+    if (step === "step2" || "step3" || "step5") {
+      stepTwo(step);
     }
   } else {
     return;
   }
 }
 
-function stepTwo(e) {
-  const nextPrev = e.currentTarget.dataset.step;
-  const fieldToPost = e.currentTarget.dataset.field;
-  const checkedBoxes = document.querySelectorAll("fieldset.step2 input[type=checkbox]:checked");
+function stepTwo(step) {
+  const checkedBoxes = document.querySelectorAll(`fieldset.${step} input[type=checkbox]:checked`);
   // console.log(checkedBoxes.length);
   if (checkedBoxes.length >= 1) {
     // console.log("lenght more then 1");
-    document.querySelectorAll('fieldset.step2 input[type="checkbox"]').forEach((box) => {
+    document.querySelectorAll(`fieldset.${step} input[type=checkbox]`).forEach((box) => {
       box.removeAttribute("required");
     });
   } else {
-    document.querySelectorAll('fieldset.step2 input[type="checkbox"]').forEach((box) => {
+    document.querySelectorAll(`fieldset.${step} input[type=checkbox]`).forEach((box) => {
       box.setAttribute("required", true);
     });
   }
+}
+
+function addRequiredToBox() {
+  document.querySelectorAll(`fieldset.option input[type=checkbox]`).forEach((box) => {
+    box.setAttribute("required", true);
+  });
+}
+
+function takeName(fullName) {
+  let gamer = fullName.split(" ")[0];
+  gamer = gamer.replace(gamer[0], gamer[0].toUpperCase());
+  return gamer;
 }
