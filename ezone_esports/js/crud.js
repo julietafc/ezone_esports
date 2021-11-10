@@ -1,12 +1,12 @@
 import { endpoint, headers, formState } from "./settings.js";
 
-import { takeClass } from "../main";
+// import { takeClass } from "../main";
 let athleteID;
 const btnStep1 = document.querySelector("#btn-next-step1");
 
 //---------------------------------
 
-export function get(athlete, query, nextPrev, callBack, postData) {
+export function get(athlete, query, nextPrev, postData) {
   fetch(endpoint + query, {
     method: "GET",
     headers,
@@ -17,7 +17,7 @@ export function get(athlete, query, nextPrev, callBack, postData) {
         alert("that email exist");
         document.querySelector("#btn-next-step1 circle").classList.remove("thinking");
       } else {
-        post(athlete, nextPrev, callBack, postData);
+        post(athlete, nextPrev, postData);
       }
     })
     .catch((err) => {
@@ -27,7 +27,7 @@ export function get(athlete, query, nextPrev, callBack, postData) {
 
 //----------------------------
 
-export function post(payout, nextPrev, callBack, postData) {
+export function post(payout, nextPrev, postData) {
   const postPInfo = JSON.stringify(payout);
   fetch(endpoint, {
     method: "post",
@@ -42,7 +42,7 @@ export function post(payout, nextPrev, callBack, postData) {
       document.querySelector("#btn-next-step1 circle").classList.remove("thinking");
       btnStep1.removeEventListener("click", postData);
       btnStep1.addEventListener("click", takeClass);
-      callBack(nextPrev);
+      nextPrevStep(nextPrev);
     });
 }
 
@@ -62,4 +62,14 @@ export function put(nextPrev, data, callBack) {
       callBack(nextPrev);
       console.log(res);
     });
+}
+
+export function takeClass(e) {
+  const nextPrev = e.currentTarget.dataset.step;
+  nextPrevStep(nextPrev);
+}
+
+export function nextPrevStep(nextPrev) {
+  document.querySelector(".option.active").classList.remove("active");
+  document.querySelector(`.${nextPrev}`).classList.add("active");
 }

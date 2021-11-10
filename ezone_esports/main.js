@@ -1,5 +1,5 @@
 import "./style.scss";
-import { get, post, put } from "./js/crud";
+import { get, post, put, takeClass, nextPrevStep } from "./js/crud";
 import { Athlete } from "./js/settings";
 import { formState } from "./js/settings";
 
@@ -24,16 +24,6 @@ function init() {
   //addRequiredToBox();
 }
 
-export function takeClass(e) {
-  const nextPrev = e.currentTarget.dataset.step;
-  nextPrevStep(nextPrev);
-}
-
-function nextPrevStep(nextPrev) {
-  document.querySelector(".option.active").classList.remove("active");
-  document.querySelector(`.${nextPrev}`).classList.add("active");
-}
-
 const form = document.querySelector("form.options");
 form.setAttribute("novalidate", true);
 
@@ -44,7 +34,7 @@ form.addEventListener("submit", (e) => {
   }
 });
 
-export function postData(e) {
+function postData(e) {
   const nextPrev = e.currentTarget.dataset.step;
   //add class thinking to the button
   document.querySelector("#btn-next-step1 circle").classList.add("thinking");
@@ -61,7 +51,7 @@ export function postData(e) {
   athlete.fakePassword = document.querySelector("#pwd").value;
 
   //call
-  get(athlete, query, nextPrev, nextPrevStep, postData);
+  get(athlete, query, nextPrev, postData);
 }
 
 function putData(e) {
