@@ -16,14 +16,15 @@ function init() {
   });
 
   document.querySelectorAll(".next").forEach((element) => {
-    element.addEventListener("click", putData);
+    element.addEventListener("click", takeClass);
   });
 
   btnStep1 = document.querySelector("#btn-next-step1");
-  btnStep1.removeEventListener("click", putData);
+  btnStep1.removeEventListener("click", takeClass);
   btnStep1.addEventListener("click", postData);
 
   addDataToInputs();
+  //addRequiredToBox();
 }
 
 export function takeClass(e) {
@@ -93,11 +94,37 @@ function addDataToInputs() {
   });
 }
 
+function addRequiredToBox() {
+  document.querySelectorAll('fieldset.step2 input[type="checkbox"]').forEach((box) => {
+    box.setAttribute("required", true);
+  });
+}
+
 function manageImputChanges(e) {
   if (formState.step1Posted) {
-    console.log(e.currentTarget.dataset.formStep);
     const step = e.currentTarget.dataset.formStep;
+    if (step === "step2") {
+      console.log(e.currentTarget.dataset.formStep);
+      stepTwo(e);
+    }
   } else {
     return;
+  }
+}
+
+function stepTwo(e) {
+  const nextPrev = e.currentTarget.dataset.step;
+  const fieldToPost = e.currentTarget.dataset.field;
+  const checkedBoxes = document.querySelectorAll("fieldset.step2 input[type=checkbox]:checked");
+  console.log(checkedBoxes.length);
+  if (checkedBoxes.length >= 1) {
+    console.log("lenght more then 1");
+    document.querySelectorAll('fieldset.step2 input[type="checkbox"]').forEach((box) => {
+      box.removeAttribute("required");
+    });
+  } else {
+    document.querySelectorAll('fieldset.step2 input[type="checkbox"]').forEach((box) => {
+      box.setAttribute("required", true);
+    });
   }
 }

@@ -36,6 +36,8 @@
   transform: translateY(-50%) rotate(270deg);
   fill: none;
   cursor: pointer;
+  pointer-events: none;
+  opacity: 0.2;
 }
 
 @keyframes MoveRight {

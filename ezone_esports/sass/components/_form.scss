@@ -65,7 +65,7 @@ form h2 {
   }
 }
 
-#step1 {
+fieldset.option {
   &:valid {
     .number {
       background-color: cadetblue;
@@ -73,13 +73,6 @@ form h2 {
     .next {
       pointer-events: all;
       opacity: 1;
-    }
-  }
-
-  &:invalid {
-    .next {
-      pointer-events: none;
-      opacity: 0.2;
     }
   }
 }
