@@ -52,7 +52,8 @@ textarea {
   padding: 1em;
 }
 
-input[type="checkbox"] {
+input[type="checkbox"],
+input[type="radio"] {
   appearance: none;
   block-size: 1.2rem;
   inline-size: 1.2rem;
@@ -82,12 +83,13 @@ input[type="checkbox"]::after {
   block-size: 0.45em;
   inline-size: 0.8em;
   border: solid #fff;
-  border-width: 0 0 2px 2px;
+  border-width: 0 0 3px 3px;
   place-self: center;
   transform: translate(-0.4em, -0.25em) rotate(-45deg);
   transition: 0.1s;
   opacity: 0;
 }
+
 input[type="checkbox"]:checked {
   background: var(--orange-clr);
   border-color: var(--orange-clr);
@@ -95,6 +97,12 @@ input[type="checkbox"]:checked {
 }
 input[type="checkbox"]:checked::after {
   opacity: 1;
+}
+
+input[type="radio"]:checked {
+  background: var(--orange-clr);
+  border-color: var(--orange-clr);
+  color: var(--orange-clr);
 }
 
 .radio-wrap {
@@ -118,13 +126,14 @@ input[type="checkbox"]:checked::after {
   }
 }
 
-input:valid {
+input:not([type="checkbox"], [type="radio"]):valid {
   border-color: var(--green-clr);
 }
-input:invalid:not(:placeholder-shown, :focus) {
+input:not([type="checkbox"], [type="radio"]):invalid:not(:placeholder-shown, :focus) {
   border-color: red;
 }
-input:invalid:not(:placeholder-shown),
+
+input:not([type="checkbox"], [type="radio"]):invalid:not(:placeholder-shown),
 :focus {
   border-color: red;
 }

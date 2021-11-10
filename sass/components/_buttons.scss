@@ -3,6 +3,7 @@
   justify-content: flex-end;
   align-items: center;
   margin-top: 3em;
+  margin-bottom: 2em;
 }
 
 .btn {
@@ -77,15 +78,15 @@
 }
 
 circle.thinking {
-  stroke: rgb(0, 26, 255);
-  stroke-width: 2px;
+  stroke: var(--orange-clr);
+  stroke-width: 4px;
   stroke-dasharray: 80;
   stroke-linecap: round;
   transform-box: fill-box;
   transform-origin: center;
   transform: rotate(0deg);
   animation: dash 2s linear infinite;
-  filter: blur(0.5px) drop-shadow(0 2px 10px rgb(0, 26, 255));
+  filter: blur(0.2px) drop-shadow(0 1px 2px #f4ae95);
 }
 
 @keyframes dash {
@@ -113,5 +114,22 @@ circle.thinking {
   }
   &:focus {
     color: var(--blue-clr);
+  }
+}
+
+.getBetter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  h2 {
+    font-family: "shapiro regular";
+
+    color: var(--orange-light-clr);
+  }
+
+  .modal__btn {
+    width: 10rem;
   }
 }
