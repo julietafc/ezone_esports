@@ -14,3 +14,21 @@ export const Athlete = {
   gamePreference: [],
   skills: [],
 };
+
+let firstDataPosted = false;
+function setFDP(value) {
+  firstDataPosted = value;
+}
+
+export const formState = {
+  step1Posted: false,
+  step1Change: false,
+  step2Posted: false,
+  step2Change: false,
+  step3Posted: false,
+  step3Change: false,
+  step4Posted: false,
+  step4Change: false,
+  step5Posted: false,
+  step5Change: false,
+};
