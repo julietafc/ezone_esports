@@ -1,4 +1,4 @@
-import { endpoint, headers, firstDataPosted, setFDP } from "./settings.js";
+import { endpoint, headers, formState } from "./settings.js";
 
 import { takeClass } from "../main";
 let athleteID;
@@ -6,7 +6,7 @@ const btnStep1 = document.querySelector("#btn-next-step1");
 
 //---------------------------------
 
-export function get(athlete, query, nextPrev, callBack) {
+export function get(athlete, query, nextPrev, callBack, postData) {
   fetch(endpoint + query, {
     method: "GET",
     headers,
@@ -17,7 +17,7 @@ export function get(athlete, query, nextPrev, callBack) {
         alert("that email exist");
         document.querySelector("#btn-next-step1 circle").classList.remove("thinking");
       } else {
-        post(athlete, nextPrev, callBack);
+        post(athlete, nextPrev, callBack, postData);
       }
     })
     .catch((err) => {
@@ -27,19 +27,20 @@ export function get(athlete, query, nextPrev, callBack) {
 
 //----------------------------
 
-export function post(payout, nextPrev, callBack) {
-  const postData = JSON.stringify(payout);
+export function post(payout, nextPrev, callBack, postData) {
+  const postPInfo = JSON.stringify(payout);
   fetch(endpoint, {
     method: "post",
     headers,
-    body: postData,
+    body: postPInfo,
   })
     .then((res) => res.json())
     .then((data) => {
       console.log(data._id);
       athleteID = data._id;
-      setFDP(true);
+      formState.step1Posted = true;
       document.querySelector("#btn-next-step1 circle").classList.remove("thinking");
+      btnStep1.removeEventListener("click", postData);
       btnStep1.addEventListener("click", takeClass);
       callBack(nextPrev);
     });
@@ -57,9 +58,7 @@ export function put(nextPrev, data, callBack) {
   })
     .then((d) => d.json())
     .then((res) => {
-      console.log("antes de thinking");
       document.querySelector(".next circle.thinking").classList.remove("thinking");
-      console.log("despues de thinking");
       callBack(nextPrev);
       console.log(res);
     });

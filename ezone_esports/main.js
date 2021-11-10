@@ -1,7 +1,7 @@
 import "./style.scss";
 import { get, post, put } from "./js/crud";
 import { Athlete } from "./js/settings";
-import { firstDataPosted } from "./js/settings";
+import { formState } from "./js/settings";
 
 let btnStep1;
 const once = {
@@ -21,7 +21,9 @@ function init() {
 
   btnStep1 = document.querySelector("#btn-next-step1");
   btnStep1.removeEventListener("click", putData);
-  btnStep1.addEventListener("click", postData, once);
+  btnStep1.addEventListener("click", postData);
+
+  addDataToInputs();
 }
 
 export function takeClass(e) {
@@ -44,7 +46,7 @@ form.addEventListener("submit", (e) => {
   }
 });
 
-function postData(e) {
+export function postData(e) {
   const nextPrev = e.currentTarget.dataset.step;
   //add class thinking to the button
   document.querySelector("#btn-next-step1 circle").classList.add("thinking");
@@ -61,7 +63,7 @@ function postData(e) {
   athlete.fakePassword = document.querySelector("#pwd").value;
 
   //call
-  get(athlete, query, nextPrev, nextPrevStep);
+  get(athlete, query, nextPrev, nextPrevStep, postData);
 }
 
 function putData(e) {
@@ -78,4 +80,24 @@ function putData(e) {
   dataObj[fieldToPost] = data;
   console.log(dataObj);
   put(nextPrev, dataObj, nextPrevStep);
+}
+
+function addDataToInputs() {
+  const steps = document.querySelectorAll("fieldset.option");
+  steps.forEach((step, i) => {
+    step.querySelectorAll("input").forEach((input) => {
+      const formStep = "step" + (i + 1);
+      input.dataset.formStep = formStep;
+      input.addEventListener("change", manageImputChanges);
+    });
+  });
+}
+
+function manageImputChanges(e) {
+  if (formState.step1Posted) {
+    console.log(e.currentTarget.dataset.formStep);
+    const step = e.currentTarget.dataset.formStep;
+  } else {
+    return;
+  }
 }
