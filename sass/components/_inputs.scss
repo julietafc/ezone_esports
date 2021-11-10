@@ -82,7 +82,7 @@ input[type="checkbox"]::after {
   block-size: 0.45em;
   inline-size: 0.8em;
   border: solid #fff;
-  border-width: 0 0 2px 2px;
+  border-width: 0 0 3px 3px;
   place-self: center;
   transform: translate(-0.4em, -0.25em) rotate(-45deg);
   transition: 0.1s;
@@ -118,13 +118,13 @@ input[type="checkbox"]:checked::after {
   }
 }
 
-input:valid {
+input:not([type="checkbox"]):valid {
   border-color: var(--green-clr);
 }
-input:invalid:not(:placeholder-shown, :focus) {
+input:not([type="checkbox"]):invalid:not(:placeholder-shown, :focus) {
   border-color: red;
 }
-input:invalid:not(:placeholder-shown),
+input:not([type="checkbox"]):invalid:not(:placeholder-shown),
 :focus {
   border-color: red;
 }
