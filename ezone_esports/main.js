@@ -4,9 +4,6 @@ import { Athlete } from "./js/settings";
 import { formState } from "./js/settings";
 
 let btnStep1;
-const once = {
-  once: true,
-};
 
 init();
 
@@ -70,7 +67,7 @@ export function postData(e) {
 function putData(e) {
   const nextPrev = e.currentTarget.dataset.step;
   const fieldToPost = e.currentTarget.dataset.field;
-  console.log(e.currentTarget);
+  // console.log(e.currentTarget);
   e.currentTarget.querySelector("circle").classList.add("thinking");
   let data = [];
   const checkedBoxes = document.querySelectorAll("fieldset.step2 input[type=checkbox]:checked");
@@ -79,24 +76,24 @@ function putData(e) {
   });
   const dataObj = {};
   dataObj[fieldToPost] = data;
-  console.log(dataObj);
+  // console.log(dataObj);
   put(nextPrev, dataObj, nextPrevStep);
 }
 
 function addDataToInputs() {
   const steps = document.querySelectorAll("fieldset.option");
   steps.forEach((step, i) => {
+    const formStep = "step" + (i + 1);
+    //add info to numbers
+    step.querySelector(".number").dataset.formStep = formStep;
+    step.querySelector(".number").addEventListener("click", function () {
+      nextPrevStep(formStep);
+    });
+    //add info to inputs
     step.querySelectorAll("input").forEach((input) => {
-      const formStep = "step" + (i + 1);
       input.dataset.formStep = formStep;
       input.addEventListener("change", manageImputChanges);
     });
-  });
-}
-
-function addRequiredToBox() {
-  document.querySelectorAll('fieldset.step2 input[type="checkbox"]').forEach((box) => {
-    box.setAttribute("required", true);
   });
 }
 
@@ -104,7 +101,6 @@ function manageImputChanges(e) {
   if (formState.step1Posted) {
     const step = e.currentTarget.dataset.formStep;
     if (step === "step2") {
-      console.log(e.currentTarget.dataset.formStep);
       stepTwo(e);
     }
   } else {
@@ -116,9 +112,9 @@ function stepTwo(e) {
   const nextPrev = e.currentTarget.dataset.step;
   const fieldToPost = e.currentTarget.dataset.field;
   const checkedBoxes = document.querySelectorAll("fieldset.step2 input[type=checkbox]:checked");
-  console.log(checkedBoxes.length);
+  // console.log(checkedBoxes.length);
   if (checkedBoxes.length >= 1) {
-    console.log("lenght more then 1");
+    // console.log("lenght more then 1");
     document.querySelectorAll('fieldset.step2 input[type="checkbox"]').forEach((box) => {
       box.removeAttribute("required");
     });
