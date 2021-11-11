@@ -32,4 +32,5 @@ export const formState = {
   step4Change: false,
   step5Posted: false,
   step5Change: false,
+  formPosted: false,
 };

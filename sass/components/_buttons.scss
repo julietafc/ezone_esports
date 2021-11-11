@@ -27,6 +27,19 @@
   }
 }
 
+.step5 {
+  .btn {
+    pointer-events: none;
+    opacity: 0.2;
+  }
+  &:valid {
+    .btn {
+      pointer-events: all;
+      opacity: 1;
+    }
+  }
+}
+
 .next {
   border: none;
   background-color: transparent;

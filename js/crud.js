@@ -62,7 +62,7 @@ export function put(data, callBack) {
     .then((res) => {
       // document.querySelector(".next circle.thinking").classList.remove("thinking");
       console.log(res);
-
+      formState.formPosted = true;
       cleanForm();
       callBack(gamer);
     });
