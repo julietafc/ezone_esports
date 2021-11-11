@@ -90,11 +90,14 @@ fieldset.option {
   height: 100%;
   transform-origin: center;
   background-color: var(--background-clr);
-  padding: 6rem 1.5rem;
+  padding: 6rem 2rem;
   color: var(--orange-pastel-clr);
 
   p {
     color: var(--orange-pastel-clr);
-    font-size: calc(2rem + 1.5vmin);
+    font-size: calc(1.5rem + 1.5vmin);
+    text-align: center;
+    line-height: 2;
+    padding: 1em;
   }
 }
