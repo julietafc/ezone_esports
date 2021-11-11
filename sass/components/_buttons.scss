@@ -30,6 +30,7 @@
     border: 2px solid var(--orange-clr);
   }
   &.process {
+    pointer-events: none;
     animation: thinking 1.5s ease-in-out infinite;
   }
 }
