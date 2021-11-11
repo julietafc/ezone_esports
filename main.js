@@ -148,7 +148,7 @@ function takeName(fullName) {
 
 function displayGreeting(gamerName) {
   const greeting = `Thank you very much ${gamerName} for completing the form.
-We are excited to help you to become the gamer you want to be!`;
+We are excited to help you become the gamer you want to be!`;
 
   const wrapper = document.createElement("div");
   wrapper.classList.add("greetingWraper");
