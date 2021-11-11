@@ -25,6 +25,10 @@
     background-color: var(--orange-clr);
     color: black;
   }
+  &:focus {
+    outline: none;
+    border: 2px solid var(--orange-clr);
+  }
 }
 
 .step5 {
