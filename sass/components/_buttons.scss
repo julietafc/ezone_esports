@@ -29,6 +29,22 @@
     outline: none;
     border: 2px solid var(--orange-clr);
   }
+  &.process {
+    animation: thinking 1.5s ease-in-out infinite;
+  }
+}
+
+@keyframes thinking {
+  0%,
+  100% {
+    background-color: none;
+    color: var(--orange-clr);
+  }
+
+  50% {
+    background-color: var(--orange-clr);
+    color: rgb(9, 5, 24);
+  }
 }
 
 .step5 {

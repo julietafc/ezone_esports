@@ -49,8 +49,10 @@ function postData(e) {
 }
 
 function putData() {
+  document.querySelector(".btn.submit").classList.add("process");
   fillObject();
   // console.log(dataObj);
+  document.querySelector(".btn.submit");
   put(athlete, displayGreeting);
 }
 
@@ -156,4 +158,5 @@ We are excited to help you become the gamer you want to be!`;
   pGreeting.textContent = greeting;
   wrapper.appendChild(pGreeting);
   document.querySelector("fieldset.step5").appendChild(wrapper);
+  document.querySelector(".btn.submit").classList.remove("process");
 }
