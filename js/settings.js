@@ -10,8 +10,9 @@ export const Athlete = {
   email: "",
   gamerTag: "",
   fakePassword: "",
-  equipment: [],
+  gameType: [],
   gamePreference: [],
+  habits: {},
   skills: [],
 };
 

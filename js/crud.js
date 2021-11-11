@@ -2,11 +2,12 @@ import { endpoint, headers, formState } from "./settings.js";
 
 // import { takeClass } from "../main";
 let athleteID;
+let gamer;
 const btnStep1 = document.querySelector("#btn-next-step1");
 
 //---------------------------------
 
-export function get(athlete, query, nextPrev, postData) {
+export function get(athlete, query, nextPrev, postData, gamerName) {
   fetch(endpoint + query, {
     method: "GET",
     headers,
@@ -14,9 +15,10 @@ export function get(athlete, query, nextPrev, postData) {
     .then((res) => res.json())
     .then((data) => {
       if (data[0]) {
-        alert("that email exist");
+        alert(`Hi ${gamerName}! that email already exist!`);
         document.querySelector("#btn-next-step1 circle").classList.remove("thinking");
       } else {
+        gamer = gamerName;
         post(athlete, nextPrev, postData);
       }
     })
@@ -48,7 +50,7 @@ export function post(payout, nextPrev, postData) {
 
 //-----------------------------------
 
-export function put(nextPrev, data, callBack) {
+export function put(data, callBack) {
   let postData = JSON.stringify(data);
 
   fetch(endpoint + "/" + athleteID, {
@@ -58,9 +60,11 @@ export function put(nextPrev, data, callBack) {
   })
     .then((d) => d.json())
     .then((res) => {
-      document.querySelector(".next circle.thinking").classList.remove("thinking");
-      callBack(nextPrev);
+      // document.querySelector(".next circle.thinking").classList.remove("thinking");
       console.log(res);
+
+      cleanForm();
+      callBack(gamer);
     });
 }
 
@@ -72,4 +76,19 @@ export function takeClass(e) {
 export function nextPrevStep(nextPrev) {
   document.querySelector(".option.active").classList.remove("active");
   document.querySelector(`.${nextPrev}`).classList.add("active");
+}
+
+function cleanForm() {
+  document.querySelector("#fname").value = "";
+  document.querySelector("#email").value = "";
+  document.querySelector("#gtag").value = "";
+  document.querySelector("#pwd").value = "";
+  const allBoxes = document.querySelectorAll('input[type="checkbox"]');
+  allBoxes.forEach((box) => {
+    box.setAttribute("required", true);
+    box.checked = false;
+  });
+  document.querySelectorAll('input[type="radio"]').forEach((radio) => {
+    radio.checked = false;
+  });
 }

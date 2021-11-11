@@ -1,10 +1,11 @@
 import "./style.scss";
-import { get, post, put, takeClass, nextPrevStep } from "./js/crud";
-import { Athlete } from "./js/settings";
-import { formState } from "./js/settings";
+import { get, put, takeClass, nextPrevStep } from "./js/crud";
+import { Athlete, formState } from "./js/settings";
 
 let btnStep1;
 let gamerName;
+
+const athlete = Object.create(Athlete);
 
 window.addEventListener("load", init);
 
@@ -21,19 +22,11 @@ function init() {
   btnStep1.removeEventListener("click", takeClass);
   btnStep1.addEventListener("click", postData);
 
+  document.querySelector(".btn.submit").addEventListener("click", putData);
+
   addDataToInputs();
   addRequiredToBox();
 }
-
-const form = document.querySelector("form.options");
-form.setAttribute("novalidate", true);
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  if (form.checkValidity()) {
-  } else {
-  }
-});
 
 function postData(e) {
   const nextPrev = e.currentTarget.dataset.step;
@@ -45,30 +38,51 @@ function postData(e) {
   const query = `?q={"email":"${email}"}`;
 
   //fill athlete object with personal info
-  const athlete = Object.create(Athlete);
+
   athlete.fullName = document.querySelector("#fname").value;
   athlete.email = email;
   athlete.gamerTag = document.querySelector("#gtag").value;
   athlete.fakePassword = document.querySelector("#pwd").value;
   gamerName = takeName(document.querySelector("#fname").value);
   //call
-  get(athlete, query, nextPrev, postData);
+  get(athlete, query, nextPrev, postData, gamerName);
 }
 
-function putData(e) {
-  const nextPrev = e.currentTarget.dataset.step;
-  const fieldToPost = e.currentTarget.dataset.field;
-  // console.log(e.currentTarget);
-  e.currentTarget.querySelector("circle").classList.add("thinking");
+function putData() {
+  fillObject();
+  // console.log(dataObj);
+  put(athlete, displayGreeting);
+}
+
+function fillObject() {
+  athlete.fullName = document.querySelector("#fname").value;
+  athlete.email = document.querySelector("#email").value;
+  athlete.gamerTag = document.querySelector("#gtag").value;
+  athlete.fakePassword = document.querySelector("#pwd").value;
+  athlete.gameType = arrayBoxes("step2");
+  athlete.gamePreference = arrayBoxes("step3");
+  athlete.habits = objRadio("step4");
+  athlete.skills = arrayBoxes("step5");
+  console.log(athlete);
+}
+
+function arrayBoxes(step) {
   let data = [];
-  const checkedBoxes = document.querySelectorAll("fieldset.step2 input[type=checkbox]:checked");
+  const checkedBoxes = document.querySelectorAll(`fieldset.${step} input[type=checkbox]:checked`);
   checkedBoxes.forEach((checkBox) => {
     data.push(checkBox.value);
   });
-  const dataObj = {};
-  dataObj[fieldToPost] = data;
-  // console.log(dataObj);
-  put(nextPrev, dataObj, nextPrevStep);
+  return data;
+}
+
+function objRadio(step) {
+  let data = {};
+  const checkedRadios = document.querySelectorAll(`fieldset.${step} input[type=radio]:checked`);
+  checkedRadios.forEach((checkRadio) => {
+    const key = checkRadio.getAttribute("name");
+    data[key] = checkRadio.value;
+  });
+  return data;
 }
 
 function addDataToInputs() {
@@ -102,7 +116,11 @@ function manageImputChanges(e) {
 function stepTwo(step) {
   const checkedBoxes = document.querySelectorAll(`fieldset.${step} input[type=checkbox]:checked`);
   // console.log(checkedBoxes.length);
-  if (checkedBoxes.length >= 1) {
+  let NoBoxes = 1;
+  if (step === "step3") {
+    NoBoxes = 3;
+  }
+  if (checkedBoxes.length >= NoBoxes) {
     // console.log("lenght more then 1");
     document.querySelectorAll(`fieldset.${step} input[type=checkbox]`).forEach((box) => {
       box.removeAttribute("required");
@@ -124,4 +142,18 @@ function takeName(fullName) {
   let gamer = fullName.split(" ")[0];
   gamer = gamer.replace(gamer[0], gamer[0].toUpperCase());
   return gamer;
+}
+
+///-------------greeting-----------------
+
+function displayGreeting(gamerName) {
+  const greeting = `Thank you very much ${gamerName} for your preference.
+We are  so happy to help you to become the gamer you want to be.`;
+
+  const wrapper = document.createElement("div");
+  wrapper.classList.add("greetingWraper");
+  const pGreeting = document.createElement("p");
+  pGreeting.textContent = greeting;
+  wrapper.appendChild(pGreeting);
+  document.querySelector("fieldset.step5").appendChild(wrapper);
 }
